@@ -1,0 +1,11 @@
+{
+    "main": "src/index.ts",
+    "author": "Noa Ignite - Assignment Backend",
+    "name": "assignment-backend",
+    "version": "0.0.1",
+    "scripts": {
+        "start": ""
+    },
+    "dependencies": {},
+    "private": true
+}
