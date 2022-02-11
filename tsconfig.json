@@ -1,20 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es6",
     "module": "commonjs",
-    "moduleResolution": "node",
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "target": "es6",
     "allowJs": true,
-    "importHelpers": true,
-    "alwaysStrict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "strictNullChecks": false
-  },
+    "outDir": "dist",
+    "lib": ["es6"],
+    "paths": {
+      "@models/*": ["./src/models/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@config": ["./src/config/index.ts"],
+    }
+  }
 }

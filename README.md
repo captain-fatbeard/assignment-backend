@@ -56,29 +56,16 @@ We’re aware of and understand that you have a full-time job already and assume
 
 ## This repository
 
-React Native application using [Expo's Managed Workflow](https://docs.expo.io/introduction/managed-vs-bare/#managed-workflow).
+This repository contains a bit of boilerplate to get you going quicker.
+Feel free to change anything.
 
-### Getting started
+There is a docker-compose file which sets up a postgres database on port 5432.
+You can use this connectionstring to connect to it: `postgresql://test:test@:5432/test`
 
-Since the project is based on Expo's Managed workflow you will need to install Expo locally - as well as install the project's dependencies.
+Steps to run this project:
 
--   [Install Expo](https://docs.expo.io/get-started/installation/)
--   Get familiar with the [Expo CLI](https://docs.expo.io/workflow/expo-cli/)
--   Install dependencies: `npm install`
--   Run: `npm run [ios|android]`
+1. Run `npm install` command
+2. Run `docker-compose up` command
+3. Run `npm run dev` command
 
-### Prettier & Husky
-
-[Prettier](http://prettier.io/), [Husky](https://github.com/typicode/husky) and [Pretty Quick](https://github.com/prestontighe/pretty-quick) are used to provide formatting on the fly (on every commit). These are used in order to ensure consistent and streamlined formatting of files. Husky will automatically run when running `git commit -m []"` and will then format any files (that have not been formatted already). You might therefore have to re `git add [.]` and `git commit -m []` if Pretty Quick find one or more files that are not properly formatted. This is done in order for you to be able to inspect the Prettier formatting updates. Although this is rarely needed.
-
-Example of Pretty Quick avoiding a commit due to lack of formatting:
-
-```bash
-husky > pre-commit (node v14.14.0)
-🔍  Finding changed files since git revision b1caead.
-🎯  Found 8 changed files.
-✍️  Fixing up README.md.
-✍️  Fixing up src/hooks/useSignUp.js.
-✗ File had to be prettified and prettyQuick was set to bail mode.
-husky > pre-commit hook failed (add --no-verify to bypass)
-```
+The project uses node v16.

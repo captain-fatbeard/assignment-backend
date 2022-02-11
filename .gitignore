@@ -1,20 +1,37 @@
-node_modules/**/*
-.expo/*
-npm-debug.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-*.orig.*
+# compiled output
+/dist
+/node_modules
 
-.expo-shared
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
 
-# macOS
+# OS
 .DS_Store
 
-yarn-error.log
+# Tests
+/coverage
+/.nyc_output
 
-*.env
-.idea
-certs
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+.env
+.sentryclirc

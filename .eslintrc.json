@@ -1,0 +1,21 @@
+{
+    "extends": ["@noaignite-dk/eslint-config/typescript"],
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["import"],
+    "parserOptions": {
+        "project": "./tsconfig.json"
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    },
+    "env": {
+        "node": true,
+        "commonjs": true,
+        "es2020": true
+    },
+    "rules": {
+        "import/extensions": ["off"]
+    }
+}
