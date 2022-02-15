@@ -33,3 +33,20 @@ This is a backend assignment for a job application!
 -   filtering middleware  (est 3 sp)
 
 Total 24 storypoints
+
+## This repository
+
+This repository contains a bit of boilerplate to get you going quicker.
+Feel free to change anything.
+
+There is a docker-compose file which sets up a postgres database on port 5432.
+You can use this connectionstring to connect to it: `postgresql://test:test@:5432/test`
+
+Steps to run this project:
+
+1. Run `npm install` command
+2. Run `docker-compose up` command
+3. Run `cp .env.sample .env` command
+4. Run `npm run dev` command
+
+The project uses node v16.
