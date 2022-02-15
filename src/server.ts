@@ -1,7 +1,7 @@
 import { fastify } from 'fastify';
 import fastifyCors from 'fastify-cors';
 
-import { healthRoutes } from './api/routes';
+import { healthRoutes, ExpenseRoute } from './api/routes';
 
 import config from '@config';
 
@@ -14,6 +14,7 @@ const app = fastify({
 export async function createServer() {
 	await app.register(fastifyCors);
 	await app.register(healthRoutes, { prefix: '/api/health' });
+	await app.register(ExpenseRoute, { prefix: '/api/expenses' });
 
 	app.setErrorHandler((error, req, res) => {
 		req.log.error(error.toString());
