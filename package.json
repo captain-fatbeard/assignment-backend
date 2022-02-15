@@ -6,10 +6,15 @@
     "dev": "tsc-watch --onSuccess \"node -r ts-node/register/transpile-only -r tsconfig-paths/register -r dotenv/config ./dist/index.js\"",
     "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register -r dotenv/config ./dist/index.js",
     "build": "tsc",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "migrate:fresh": "db-migrate down --migrations-dir ./src/migrations && db-migrate up --migrations-dir ./src/migrations",
+    "migrate:up": "db-migrate up --migrations-dir ./src/migrations",
+    "migrate:down": "db-migrate down --migrations-dir ./src/migrations"
   },
   "license": "ISC",
   "dependencies": {
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
     "dotenv": "^16.0.0",
     "fastify": "^3.27.1",
     "fastify-auth": "^1.1.0",
