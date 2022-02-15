@@ -1,7 +1,7 @@
 import { fastify } from 'fastify';
 import fastifyCors from 'fastify-cors';
 
-import { healthRoutes } from './api/routes/health';
+import { healthRoutes } from './api/routes';
 
 import config from '@config';
 
