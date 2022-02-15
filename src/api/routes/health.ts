@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
 
-import { isUp } from './controller';
+import { isUp } from '../controllers/health';
 
 export async function healthRoutes(fastify: FastifyInstance): Promise<void> {
 	fastify.get('/', isUp);
