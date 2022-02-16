@@ -2,6 +2,8 @@ import { DataTypes, Model } from 'sequelize';
 
 import db from '../../config/database.config';
 
+// import { ExpenseInstance } from './ExpenseModel'
+
 interface SupplierAttributes {
 	id: number;
 	name: string;
@@ -26,3 +28,9 @@ SupplierInstance.init(
 		tableName: 'suppliers',
 	},
 );
+
+// SupplierInstance.hasMany(ExpenseInstance, {
+// sourceKey: 'id',
+// foreignKey: 'supplier_id',
+// as: 'expenses',
+// });
