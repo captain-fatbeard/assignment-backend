@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify';
 
-import { ExpenseInstance } from '../models/ExpenseModel';
+import { ExpenseInstance } from '../models';
 
 export const indexExpense = async (req: FastifyRequest, res: FastifyReply): Promise<FastifyReply> => {
 	const records = await ExpenseInstance.findAll({ where: {} });
@@ -36,6 +36,12 @@ export const createExpense = async (req: FastifyRequest, res: FastifyReply): Pro
 export const updateExpense = async (req: FastifyRequest, res: FastifyReply): Promise<FastifyReply> => {
 	const { id }: { id?: number } = req.params;
 	const record = await ExpenseInstance.findOne({ where: { id } });
+	if (!record) {
+		return res.send({
+			status: 404,
+			msg: 'not found',
+		});
+	}
 	record.update(req.body);
 	return res.send({
 		status: 200,
