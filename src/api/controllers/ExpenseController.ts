@@ -3,12 +3,13 @@ import { FastifyReply, FastifyRequest } from 'fastify';
 import { ExpenseInstance } from '../models';
 
 export const indexExpense = async (req: FastifyRequest, res: FastifyReply): Promise<FastifyReply> => {
-	const { limit = 3, page = 1 }: { limit?: number; page?: number } = req.query;
+	const { limit = 20, page = 1, supplier }: { limit?: number; page?: number; supplier?: string } = req.query;
 	const pageNumber: number = +page;
 	const limitNumber: number = +limit;
+	const where = supplier ? { supplier_id: supplier } : {};
 
 	const offset = (page - 1) * limitNumber;
-	const records = await ExpenseInstance.findAndCountAll({ where: {}, limit: limitNumber, offset });
+	const records = await ExpenseInstance.findAndCountAll({ where, limit: limitNumber, offset });
 
 	return res.send({
 		status: 200,
