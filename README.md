@@ -8,7 +8,7 @@
 
 This is a backend assignment for a job application!
 
-[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/captain-fatbeard/assignment-backend/LICENSE.md)
+[![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/captain-fatbeard/assignment-backend/blob/main/LICENSE.md)
 
 </div>
 
