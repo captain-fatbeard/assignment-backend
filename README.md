@@ -47,6 +47,7 @@ Steps to run this project:
 1. Run `npm install` command
 2. Run `docker-compose up` command
 3. Run `cp .env.sample .env` command
-4. Run `npm run dev` command
+4. Run `npm run migrate:fresh` command
+5. Run `npm run dev` command
 
 The project uses node v16.
