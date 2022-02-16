@@ -3,10 +3,27 @@ import { FastifyReply, FastifyRequest } from 'fastify';
 import { ExpenseInstance } from '../models';
 
 export const indexExpense = async (req: FastifyRequest, res: FastifyReply): Promise<FastifyReply> => {
-	const records = await ExpenseInstance.findAll({ where: {} });
+	const { limit = 3, page = 1 }: { limit?: number; page?: number } = req.query;
+	const pageNumber: number = +page;
+	const limitNumber: number = +limit;
+
+	const offset = (page - 1) * limitNumber;
+	const records = await ExpenseInstance.findAndCountAll({ where: {}, limit: limitNumber, offset });
+
 	return res.send({
 		status: 200,
-		data: records,
+		data: records.rows,
+		total: records.count,
+		totalPages: Math.ceil(records.count / limitNumber),
+		page: pageNumber,
+		next: {
+			page: pageNumber + 1,
+			limitNumber,
+		},
+		previous: {
+			page: pageNumber - 1,
+			limitNumber,
+		},
 	});
 };
 
