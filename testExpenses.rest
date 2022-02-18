@@ -1,0 +1,34 @@
+GET http://localhost:8080/api/expenses?page=2
+
+###
+
+GET http://localhost:8080/api/expenses/1
+
+###
+
+POST http://localhost:8080/api/expenses
+Content-Type: application/json
+
+{
+    "supplier_id": 1,
+    "name": "expense name 1",
+    "value": 2,
+    "is_paid": false
+}
+
+
+###
+
+PUT http://localhost:8080/api/expenses/1
+Content-Type: application/json
+
+{
+    "supplier_id": 1,
+    "name": "expense name changed",
+    "value": 2,
+    "is_paid": true
+}
+
+###
+
+DELETE http://localhost:8080/api/expenses/1

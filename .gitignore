@@ -35,6 +35,3 @@ lerna-debug.log*
 
 .env
 .sentryclirc
-
-# vs code extensions files
-*.rest

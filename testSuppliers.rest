@@ -1,0 +1,31 @@
+GET http://localhost:8080/api/suppliers
+
+###
+
+GET http://localhost:8080/api/suppliers/1
+
+###
+
+POST http://localhost:8080/api/suppliers
+Content-Type: application/json
+
+{
+    "name": "supplier name 7"
+}
+
+
+###
+
+PUT http://localhost:8080/api/suppliers/1
+Content-Type: application/json
+
+{
+    "supplier_id": 1,
+    "name": "supplier changed",
+    "value": 2,
+    "is_paid": false
+}
+
+###
+
+DELETE http://localhost:8080/api/suppliers/1
