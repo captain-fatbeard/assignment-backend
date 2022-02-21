@@ -12,6 +12,15 @@ This is a backend assignment for a job application!
 
 </div>
 
+## Summary
+
+As this was my first real Typescript and fastify assignment, i started out scoping the tasks. The [brief](https://github.com/captain-fatbeard/assignment-backend/blob/main/brief.md) asked for a relational model structure so after the scope, I created a simple uml to visualize the models. 
+
+My plan was then to start writting test stories, but first i couldn't resist checking out how to use Typescript and fastify. I ended up using 4-5 hours on just building the API, and at that time i had no more time for writting the test.
+
+Hope i did ok ?
+
+
 ## Scope
 
 -   general setup (est 1 sp)
